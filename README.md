@@ -26,6 +26,19 @@
 	E5P_UBL_256K_SKRMINIE3_20
 ; Unified bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOU HAVE 512K)
 	E5P_UBL_512K_SKRMINIE3_20
+; Creality Silent and Stock boards
+; Unified bed leveling, direct drive, Creality Silent Board
+  E5PUBLDDSlnt
+; Bilinear bed leveling, direct drive, Creality Silent Board
+  E5PBILDDSlnt
+; Unified bed leveling, Creality Silent Board
+  E5PUBLSlnt
+; Bilinear bed leveling, Creality Silent Board
+  E5PBILSlnt
+; Unified bed leveling, Creality Stock Board
+  E5PUBLStck
+; Bilinear bed leveling, Creality Stock Board
+  E5PBILStck
 ```
 
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs.
