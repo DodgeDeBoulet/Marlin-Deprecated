@@ -1,14 +1,20 @@
 ## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2
  Borrowed from TinyMachines/InsanityAutomation.
+
+ **UPDATE:** Includes two experimental builds for the TFT35, referred to in the firmware as  REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER.
  
  A selection of custom builds for the Ender 5 Plus:
  
 ```
 ; BTT SKR1.4 configurations below assume TMC2209 stepper drivers
 ; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
-  E5P_BIL_DD_DZ_SKR14
+	E5P_BIL_DD_DZ_SKR14
 ; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
-  E5P_UBL_DD_DZ_SKR14
+	E5P_UBL_DD_DZ_SKR14
+; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
+  E5P_BIL_DD_DZ_GR_SKR14
+; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
+  E5P_UBL_DD_DZ_GR_SKR14
 ; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board
   E5P_BIL_DD_SKR14
 ; Unified bed leveling with Direct Drive and BTT SKR1.4 board
@@ -26,7 +32,6 @@
   E5P_UBL_256K_SKRMINIE3_20
 ; Unified bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOU HAVE 512K)
   E5P_UBL_512K_SKRMINIE3_20
-; Creality Silent and Stock boards
 ; Unified bed leveling, direct drive, Creality Silent Board
   E5PUBLDDSlnt
 ; Bilinear bed leveling, direct drive, Creality Silent Board
