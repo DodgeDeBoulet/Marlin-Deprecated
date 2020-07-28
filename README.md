@@ -5,14 +5,18 @@
  
 ```
 ; BTT SKR1.4 configurations below assume TMC2209 stepper drivers
-; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board - 49 Probe Points for ABL
+; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
 	E5P_BIL_DD_DZ_SKR14
-; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board - 25 Probe POints for ABL
+; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
 	E5P_UBL_DD_DZ_SKR14
-; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board - 49 Probe Points for ABL
+; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board
 	E5P_BIL_DD_SKR14
-; Unified bed leveling with Direct Drive  and BTT SKR1.4 board - 25 Probe POints for ABL
+; Unified bed leveling with Direct Drive and BTT SKR1.4 board
 	E5P_UBL_DD_SKR14
+; Bilinear bed leveling w/bowden configuration and BTT SKR1.4 board
+	E5P_BIL_SKR14
+; Unified bed leveling w/bowden configuration and BTT SKR1.4 board
+	E5P_UBL_SKR14
 ; BTT SKR Mini E3 v2 configurations
 ; Bilinear bed leveling, BTT SKR Mini E3 2.0 board (SAFEST TO USE - Not all Mini E3 2.0 boards have 512K)
 	E5P_BIL_256K_SKRMINIE3_20
@@ -25,14 +29,16 @@
 ```
 
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs.
-Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
+Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4. The screen flash files have been
+extracted from the original Insanity Automation distribution and are in the file list above as [DWIN_SET.7z](https://github.com/DodgeDeBoulet/Marlin-2.0.6/raw/Ender5Plus/DWIN_SET.7z). You'll need
+[7-Zip](https://www.7-zip.org/download.html) to decompress them.
 
 These builds also assume that you are using the SERVO and PROBE ports for the BLTouch and **not** the Z endstop port. Make
 sure that you follow the wires back to the BLTouch itself to verify correct wiring. There's a diagram in the respective board's
 documentation.
 
-* SKR Mini E3 v2: [Instruction Manual](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V2.0/Hardware/BTT%20SKR%20MINI%20E3%20V2.0%20Instruction%20Manual.pdf)
-* SKR 1.4/Turbo: [Instruction Manual](https://github.com/bigtreetech/BIGTREETECH-SKR-V1.3/blob/master/BTT%20SKR%20V1.4/Hardware/BTT%20SKR%20V1.4%20Instruction%20Manual.pdf)
+* [SKR Mini E3 v2 Instruction Manual](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V2.0/Hardware/BTT%20SKR%20MINI%20E3%20V2.0%20Instruction%20Manual.pdf)
+* [SKR 1.4/Turbo Instruction Manual](https://github.com/bigtreetech/BIGTREETECH-SKR-V1.3/blob/master/BTT%20SKR%20V1.4/Hardware/BTT%20SKR%20V1.4%20Instruction%20Manual.pdf)
 
 ## Original Marlin 2.0.6 README.md
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
