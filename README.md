@@ -1,31 +1,27 @@
-## Creality Ender 5 Plus Touch Screen supported firmware - BTT SKR 1.4/Mini E3 v2
+## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2
  Borrowed from TinyMachines/InsanityAutomation.
  
  A selection of custom builds for the Ender 5 Plus:
  
 ```
 ; BTT SKR1.4 configurations below assume TMC2209 stepper drivers
-; Universal bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
+; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board - 49 Probe Points for ABL
+	E5P_BIL_DD_DZ_SKR14
+; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board - 25 Probe POints for ABL
 	E5P_UBL_DD_DZ_SKR14
-; Universal bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), Melzi Host (No SD Card), and BTT SKR1.4 board
-	E5P_UBL_DD_DZ_Melzi_SKR14
-; Universal bed leveling with Direct Drive and BTT SKR1.4 board
+; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board - 49 Probe Points for ABL
+	E5P_BIL_DD_SKR14
+; Unified bed leveling with Direct Drive  and BTT SKR1.4 board - 25 Probe POints for ABL
 	E5P_UBL_DD_SKR14
-; Universal bed leveling with Direct Drive, Melzi Host (No SD Card),  BTT SKR1.4 board
-	E5P_UBL_DD_Melzi_SKR14
-; Universal bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E0), Sensorless Homing and BTT SKR1.4 board
-	E5P_UBL_DD_DZ_SH_SKR14
-; Universal bed leveling with Direct Drive and Creality v2.2.1 Silent Board
-	E5P_UBL_DD_Slnt
-; Universal bed leveling, BTT SKR1.1 Pro board
-	E5P_UBL_SKRPRO11
-; With Direct Drive adjustments
-	E5P_UBL_DD_SKRPRO11
-; Bi-lateral bed leveling, BTT SKR Mini E3 2.0 board (256K, recommended for binned processors)
-	E5P_BIL_256K_SKRMINIE320
-; Bi-lateral bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOUR BOARD HAS 512K!!!)
-	E5P_BIL_SKRMINIE320
-
+; BTT SKR Mini E3 v2 configurations
+; Bilinear bed leveling, BTT SKR Mini E3 2.0 board (SAFEST TO USE - Not all Mini E3 2.0 boards have 512K)
+	E5P_BIL_256K_SKRMINIE3_20
+; Bilinear bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOU HAVE 512K)
+	E5P_BIL_512K_SKRMINIE3_20
+; Unified bed leveling, BTT SKR Mini E3 2.0 board (SAFEST TO USE - Not all Mini E3 2.0 boards have 512K)
+	E5P_UBL_256K_SKRMINIE3_20
+; Unified bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOU HAVE 512K)
+	E5P_UBL_512K_SKRMINIE3_20
 ```
 
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs.
