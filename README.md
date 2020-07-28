@@ -40,6 +40,7 @@
 ; Bilinear bed leveling, Creality Stock Board
   E5PBILStck
 ```
+Name abbreviations were required for the Creality boards due to limitations in their toolset regarding long filenames in Windows. That's why they look different from the SKR entries.
 
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs.
 Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
