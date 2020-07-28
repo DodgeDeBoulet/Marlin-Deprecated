@@ -1,4 +1,4 @@
-## Creality Ender 5 Plus Touch Screen supported firmware - BTT SKR 1.4
+## Creality Ender 5 Plus Touch Screen supported firmware - BTT SKR 1.4/Mini E3 v2
  Borrowed from TinyMachines/InsanityAutomation.
  
  A selection of custom builds for the Ender 5 Plus:
