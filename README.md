@@ -1,5 +1,44 @@
-# Marlin 3D Printer Firmware
+## Creality Ender 5 Plus Touch Screen supported firmware - BTT SKR 1.4
+ Borrowed from TinyMachines/InsanityAutomation.
+ 
+ A selection of custom builds for the Ender 5 Plus:
+ 
+```
+; BTT SKR1.4 configurations below assume TMC2209 stepper drivers
+; Universal bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
+	E5P_UBL_DD_DZ_SKR14
+; Universal bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), Melzi Host (No SD Card), and BTT SKR1.4 board
+	E5P_UBL_DD_DZ_Melzi_SKR14
+; Universal bed leveling with Direct Drive and BTT SKR1.4 board
+	E5P_UBL_DD_SKR14
+; Universal bed leveling with Direct Drive, Melzi Host (No SD Card),  BTT SKR1.4 board
+	E5P_UBL_DD_Melzi_SKR14
+; Universal bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E0), Sensorless Homing and BTT SKR1.4 board
+	E5P_UBL_DD_DZ_SH_SKR14
+; Universal bed leveling with Direct Drive and Creality v2.2.1 Silent Board
+	E5P_UBL_DD_Slnt
+; Universal bed leveling, BTT SKR1.1 Pro board
+	E5P_UBL_SKRPRO11
+; With Direct Drive adjustments
+	E5P_UBL_DD_SKRPRO11
+; Bi-lateral bed leveling, BTT SKR Mini E3 2.0 board (256K, recommended for binned processors)
+	E5P_BIL_256K_SKRMINIE320
+; Bi-lateral bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOUR BOARD HAS 512K!!!)
+	E5P_BIL_SKRMINIE320
 
+```
+
+Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs.
+Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
+
+These builds also assume that you are using the SERVO and PROBE ports for the BLTouch and **not** the Z endstop port. Make
+sure that you follow the wires back to the BLTouch itself to verify correct wiring. There's a diagram in the respective board's
+documentation.
+
+* SKR Mini E3 v2: [Instruction Manual](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V2.0/Hardware/BTT%20SKR%20MINI%20E3%20V2.0%20Instruction%20Manual.pdf)
+* SKR 1.4/Turbo: [Instruction Manual](https://github.com/bigtreetech/BIGTREETECH-SKR-V1.3/blob/master/BTT%20SKR%20V1.4/Hardware/BTT%20SKR%20V1.4%20Instruction%20Manual.pdf)
+
+## Original Marlin 2.0.6 README.md
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
 ![GitHub Release Date](https://img.shields.io/github/release-date/marlinfirmware/marlin.svg)
