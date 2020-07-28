@@ -1,7 +1,7 @@
 ## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2
  Borrowed from TinyMachines/InsanityAutomation.
 
- **UPDATE:** Includes two experimental builds for the TFT35, referred to in the firmware as  REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER.
+ **UPDATE:** Includes experimental builds for the TFT35, referred to in the firmware as  REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER.
  
  A selection of custom builds for the Ender 5 Plus:
  
@@ -11,10 +11,6 @@
 	E5P_BIL_DD_DZ_SKR14
 ; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
 	E5P_UBL_DD_DZ_SKR14
-; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
-  E5P_BIL_DD_DZ_GR_SKR14
-; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
-  E5P_UBL_DD_DZ_GR_SKR14
 ; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board
   E5P_BIL_DD_SKR14
 ; Unified bed leveling with Direct Drive and BTT SKR1.4 board
@@ -23,6 +19,19 @@
   E5P_BIL_SKR14
 ; Unified bed leveling w/bowden configuration and BTT SKR1.4 board
   E5P_UBL_SKR14
+; EXPERIMENTAL - TFT35 Display Options
+; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
+  E5P_BIL_DD_DZ_GR_SKR14
+; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
+  E5P_UBL_DD_DZ_GR_SKR14
+; Bilinear bed leveling with TFT35 and BTT SKR1.4 board
+  E5P_BIL_DD_GR_SKR14
+; Unified bed leveling with Direct Drive, TFT35 and BTT SKR1.4 board
+  E5P_UBL_DD_GR_SKR14
+; Bilinear bed leveling with Direct Drive, TFT35 and BTT SKR1.4 board
+  E5P_BIL_GR_SKR14
+; Unified bed leveling with TFT35 and BTT SKR1.4 board
+  E5P_UBL_GR_SKR14
 ; BTT SKR Mini E3 v2 configurations
 ; Bilinear bed leveling, BTT SKR Mini E3 2.0 board (SAFEST TO USE - Not all Mini E3 2.0 boards have 512K)
   E5P_BIL_256K_SKRMINIE3_20
@@ -47,6 +56,17 @@
 ```
 Name abbreviations were required for the Creality boards due to limitations in their toolset regarding long filenames in Windows. That's why they look different from the SKR entries.
 
+Key to Filename Feature Indicators:
+
+* BIL - Bilinear Bed Leveling
+* UBL - Unified Bed Leveling
+* DD  - Direct Drive (short path from extruder to hotend)
+* DZ  - Dual Z Steppers; One Z stepper motor cable in Z1 or Z2, the other in E1
+* GR  - Graphical Display (TFT35)
+* SKR14 - BigTreeTech SKR 1.4 Main Board
+* SKRMINIE3_20 - BigTreeTeech SKR Mini E3  v2.0
+* Slnt - Creality Silent Board
+* Stck - Creality Stock Board
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs.
 Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
 
