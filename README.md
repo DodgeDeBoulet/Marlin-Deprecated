@@ -6,26 +6,26 @@
 ```
 ; BTT SKR1.4 configurations below assume TMC2209 stepper drivers
 ; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
-	E5P_BIL_DD_DZ_SKR14
+  E5P_BIL_DD_DZ_SKR14
 ; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
-	E5P_UBL_DD_DZ_SKR14
+  E5P_UBL_DD_DZ_SKR14
 ; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board
-	E5P_BIL_DD_SKR14
+  E5P_BIL_DD_SKR14
 ; Unified bed leveling with Direct Drive and BTT SKR1.4 board
-	E5P_UBL_DD_SKR14
+  E5P_UBL_DD_SKR14
 ; Bilinear bed leveling w/bowden configuration and BTT SKR1.4 board
-	E5P_BIL_SKR14
+  E5P_BIL_SKR14
 ; Unified bed leveling w/bowden configuration and BTT SKR1.4 board
-	E5P_UBL_SKR14
+  E5P_UBL_SKR14
 ; BTT SKR Mini E3 v2 configurations
 ; Bilinear bed leveling, BTT SKR Mini E3 2.0 board (SAFEST TO USE - Not all Mini E3 2.0 boards have 512K)
-	E5P_BIL_256K_SKRMINIE3_20
+  E5P_BIL_256K_SKRMINIE3_20
 ; Bilinear bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOU HAVE 512K)
-	E5P_BIL_512K_SKRMINIE3_20
+  E5P_BIL_512K_SKRMINIE3_20
 ; Unified bed leveling, BTT SKR Mini E3 2.0 board (SAFEST TO USE - Not all Mini E3 2.0 boards have 512K)
-	E5P_UBL_256K_SKRMINIE3_20
+  E5P_UBL_256K_SKRMINIE3_20
 ; Unified bed leveling, BTT SKR Mini E3 2.0 board (USE ONLY IF YOU'RE SURE YOU HAVE 512K)
-	E5P_UBL_512K_SKRMINIE3_20
+  E5P_UBL_512K_SKRMINIE3_20
 ; Creality Silent and Stock boards
 ; Unified bed leveling, direct drive, Creality Silent Board
   E5PUBLDDSlnt
