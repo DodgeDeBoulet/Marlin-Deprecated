@@ -67,8 +67,8 @@ Key to Filename Feature Indicators:
 * SKRMINIE3_20 - BigTreeTeech SKR Mini E3  v2.0
 * Slnt - Creality Silent Board
 * Stck - Creality Stock Board
-Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs.
-Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
+
+Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs. Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
 
 The screen flash files have been extracted from the original Insanity Automation distribution and are in the file list above as [DWIN_SET.7z](https://github.com/DodgeDeBoulet/Marlin-2.0.6/raw/Ender5Plus/DWIN_SET.7z). You'll need [7-Zip](https://www.7-zip.org/download.html) to decompress them. Copy the extracted DWIN_SET directory to a 4k-sector FAT32 formatted micro SD card, insert it into **the display's** card slot (you'll have to open the PSU case to get to it), and power on the printer. You'll see a lot of text and images flash on the display; it will tell you when it's complete in the upper left corner of the screen. Remove the SD card once it completes.
 
