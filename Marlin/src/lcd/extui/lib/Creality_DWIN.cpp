@@ -1511,12 +1511,15 @@ SERIAL_ECHOLN(PSTR("BeginSwitch"));
       if (recdat.data[0] == 1) //Filament is out, resume / resume selected on screen
       {
         if(
+          #if (FIL_RUNOUT_STATE == LOW)
+            #define FIL_RUNOUT_INVERTING true
+          #endif
         #if DISABLED(FILAMENT_RUNOUT_SENSOR) || ENABLED(FILAMENT_MOTION_SENSOR)
           true
         #elif NUM_RUNOUT_SENSORS > 1
-          (getActiveTool() == E0 && READ(FIL_RUNOUT_PIN) != FIL_RUNOUT_STATE) || (getActiveTool() == E1 && READ(FIL_RUNOUT2_PIN) != FIL_RUNOUT_STATE)
+          (getActiveTool() == E0 && READ(FIL_RUNOUT_PIN) != FIL_RUNOUT_INVERTING) || (getActiveTool() == E1 && READ(FIL_RUNOUT2_PIN) != FIL_RUNOUT_INVERTING)
         #else
-          getActiveTool() == E0 && READ(FIL_RUNOUT_PIN) != FIL_RUNOUT_STATE
+          getActiveTool() == E0 && READ(FIL_RUNOUT_PIN) != FIL_RUNOUT_INVERTING
         #endif
         ) {
           SERIAL_ECHOLN("Resume Yes during print");
