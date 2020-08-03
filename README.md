@@ -54,7 +54,7 @@
 ; Bilinear bed leveling, Creality Stock Board
   E5PBILStck
 ```
-Name abbreviations were required for the Creality boards due to limitations in their toolset regarding long filenames in Windows. That's why they look different from the SKR entries.
+Name abbreviations were required for the Creality boards due to limitations in their toolsets handling of long filenames in Windows. That's why they look different from the SKR entries.
 
 Key to Filename Feature Indicators:
 
@@ -68,12 +68,15 @@ Key to Filename Feature Indicators:
 * Slnt - Creality Silent Board
 * Stck - Creality Stock Board
 
+## Screen Configuration
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs. Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
 
 The screen flash files have been extracted from the original Insanity Automation distribution and are in the file list above as [DWIN_SET.7z](https://github.com/DodgeDeBoulet/Marlin-2.0.6/raw/Ender5Plus/DWIN_SET.7z). You'll need [7-Zip](https://www.7-zip.org/download.html) to decompress them. Copy the extracted DWIN_SET directory to a 4k-sector FAT32 formatted micro SD card, insert it into **the display's** card slot (you'll have to open the PSU case to get to it), and power on the printer. You'll see a lot of text and images flash on the display; it will tell you when it's complete in the upper left corner of the screen. Remove the SD card once it completes.
 
+## BLTouch Support
 For the BTT SKR board configuations: These builds assume that you are using the SERVO and PROBE ports for the BLTouch and **not** the Z endstop port. Also, please make sure that you follow the wires back to the BLTouch itself to verify correct wiring. There's a diagram in the respective board's documentation. **IMPORTANT:** The pins for the PROBE port are the reverse of what Creality uses. If you simply plug the 2 wire connector into the PROBE port, it **will not work**. You will neeed to either swap the pins in the plastic shell at the end of the wires, or cut off the plastic tab that aligns the plug in the socket and rotate the plug 180 degrees to insert it "backwards."
 
+## Stock/Silent Board Info
 If you're using a Creality board, no wiring modifications are needed, but you still have to flash the display.
 
 * [SKR Mini E3 v2 Instruction Manual](https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/blob/master/hardware/BTT%20SKR%20MINI%20E3%20V2.0/Hardware/BTT%20SKR%20MINI%20E3%20V2.0%20Instruction%20Manual.pdf)
