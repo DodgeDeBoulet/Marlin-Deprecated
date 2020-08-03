@@ -1,4 +1,4 @@
-## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2
+## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2/Stock/Silent Board
  With Configurations and Source Borrowed from [TinyMachines/InsanityAutomation](https://github.com/InsanityAutomation).
 
  **UPDATE:** Includes experimental builds for the TFT35, referred to in the firmware as  REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER.
