@@ -940,9 +940,9 @@
       #define DEFAULT_Ki 2.17
       #define DEFAULT_Kd 73.44
     #elif ENABLED(MachineEnder5Plus)
-      #define  DEFAULT_Kp 19.49
-      #define  DEFAULT_Ki 1.30
-      #define  DEFAULT_Kd 72.76
+      #define  DEFAULT_Kp 19.84
+      #define  DEFAULT_Ki 1.34
+      #define  DEFAULT_Kd 73.26
     #elif ENABLED(MachineCRX)
       #define DEFAULT_Kp 19.00
       #define DEFAULT_Ki 1.40
