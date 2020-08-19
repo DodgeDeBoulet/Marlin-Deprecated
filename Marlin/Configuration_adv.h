@@ -1922,7 +1922,11 @@
 // The number of linear moves that can be in the planner at once.
 // The value of BLOCK_BUFFER_SIZE must be a power of 2 (e.g. 8, 16, 32)
 #if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320) || DISABLED(EXTENSIBLE_UI)
-  #define BLOCK_BUFFER_SIZE 16
+  #if ENABLED(SKRMINIE320)
+    #define BLOCK_BUFFER_SIZE 16
+  #else
+    #define BLOCK_BUFFER_SIZE 64
+  #endif
 #else
   #define BLOCK_BUFFER_SIZE 8
 #endif
@@ -1930,11 +1934,16 @@
 // @section serial
 
 // The ASCII buffer for serial input
-#define MAX_CMD_SIZE 96
+//#define MAX_CMD_SIZE 96
+#define MAX_CMD_SIZE 128
 #if ENABLED(MachineCR10Orig) //melzi has more ram than a 2560
   #define BUFSIZE 16
 #elif ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
-  #define BUFSIZE 8
+  #if ENABLED(SKRMINIE320)
+    #define BUFSIZE 8
+  #else
+    #define BUFSIZE 32
+  #endif
 #else
   #define BUFSIZE 4
 #endif
@@ -1945,7 +1954,7 @@
 // For debug-echo: 128 bytes for the optimal speed.
 // Other output doesn't need to be that speedy.
 // :[0, 2, 4, 8, 16, 32, 64, 128, 256]
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11)
   #define TX_BUFFER_SIZE 32
 #else
   #define TX_BUFFER_SIZE 0
