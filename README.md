@@ -9,10 +9,10 @@
 ; BTT SKR1.4 configurations below assume TMC2209 stepper drivers
 ; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
   E5P_BIL_DD_DZ_SKR14
-; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All Metal Hotend and BTT SKR1.4 board
-  E5P_BIL_DD_DZ_AM_SKR14
 ; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
   E5P_UBL_DD_DZ_SKR14
+; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All Metal Hotend and BTT SKR1.4 board
+  E5P_UBL_DD_DZ_AM_SKR14
 ; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board
   E5P_BIL_DD_SKR14
 ; Unified bed leveling with Direct Drive and BTT SKR1.4 board
