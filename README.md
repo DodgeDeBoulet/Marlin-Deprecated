@@ -66,9 +66,13 @@ Key to Filename Feature Indicators:
 * DZ  - Dual Z Steppers; One Z stepper motor cable in Z1 or Z2, the other in E1
 * GR  - Graphical Display (TFT35)
 * SKR14 - BigTreeTech SKR 1.4 Main Board
-* SKRMINIE3_20 - BigTreeTeech SKR Mini E3  v2.0
+* SKRMINIE3_20 - BigTreeTech SKR Mini E3  v2.0
 * Slnt - Creality Silent Board
 * Stck - Creality Stock Board
+
+## UPDATE 2020/09/10: Precompiled firmwares
+
+Bin/hex files for all variants listed above are now available in the  **HEX Files** folder
 
 ## Touchscreen Hardware Configuration - SKR 1.4/Mini E3 2.0 Main Board
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs. Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
