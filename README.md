@@ -1,8 +1,10 @@
 ## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2/Stock/Silent Board
  With Configurations and Source Borrowed from [TinyMachines/InsanityAutomation](https://github.com/InsanityAutomation).
 
- **UPDATE:** Includes experimental builds for the TFT35, referred to in the firmware as  REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER.
- 
+## UPDATE 2020/09/10: Precompiled firmwares
+
+Bin/hex files for all variants listed below are now available in the  **HEX Files** folder
+
  A selection of custom builds for the Ender 5 Plus:
  
 ```
@@ -69,10 +71,6 @@ Key to Filename Feature Indicators:
 * SKRMINIE3_20 - BigTreeTech SKR Mini E3  v2.0
 * Slnt - Creality Silent Board
 * Stck - Creality Stock Board
-
-## UPDATE 2020/09/10: Precompiled firmwares
-
-Bin/hex files for all variants listed above are now available in the  **HEX Files** folder
 
 ## Touchscreen Hardware Configuration - SKR 1.4/Mini E3 2.0 Main Board
 Pinouts for the connection of the Creality touchscreen to the BTT SKR boards can be found here: https://imgur.com/rGRCmfs. Please note that the Mini E3 pinouts on the TFT socket are the same as the SKR 1.4.
