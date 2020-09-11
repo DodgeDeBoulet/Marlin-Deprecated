@@ -2009,9 +2009,8 @@
  * Currently handles M108, M112, M410, M876
  * NOTE: Not yet implemented for all platforms.
  */
-#if DISABLED(SKRMINIE320)
-  #define EMERGENCY_PARSER
-#endif
+//#define EMERGENCY_PARSER
+
 
 // Bad Serial-connections can miss a received command by sending an 'ok'
 // Therefore some clients abort after 30 seconds in a timeout.
