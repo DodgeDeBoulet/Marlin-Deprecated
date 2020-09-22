@@ -761,7 +761,11 @@
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
-  #define Z_STEPPER_ALIGN_XY { { 50, 180 }, { 319, 180 } }
+  #if ENABLED(MicroswissDirectDrive)
+    #define Z_STEPPER_ALIGN_XY { { 55, 180 }, { 314, 180 } }
+  #else
+    #define Z_STEPPER_ALIGN_XY { { 50, 180 }, { 319, 180 } }
+  #endif
 
   /**
    * Orientation for the automatically-calculated probe positions.
