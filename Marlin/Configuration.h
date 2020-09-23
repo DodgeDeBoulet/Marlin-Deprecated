@@ -1520,10 +1520,10 @@
  *      - normally-open switches to 5V and D32.
  *
  */
-#if ANY(SKR14,SKR14Turbo)
+#if ANY(SKR14,SKR14Turbo,SKR13,SKRPRO11,SKRMINIE320)
   #define Z_MIN_PROBE_PIN P0_10
 #else
-  //#define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default
+  #define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default
 #endif
 
 /**
