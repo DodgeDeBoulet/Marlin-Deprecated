@@ -1524,8 +1524,6 @@
  */
 #if ANY(SKR14,SKR14Turbo,SKR13,SKRPRO11,SKRMINIE320)
   #define Z_MIN_PROBE_PIN P0_10
-#else
-  #define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default
 #endif
 
 /**
@@ -1830,7 +1828,7 @@
     #define INVERT_E0_DIR true
     #define INVERT_E1_DIR false
   #endif
-#elif ANY(MachineCR10Orig, SKR13, SKR14, SKR14Turbo) && DISABLED(SKR13_ReverseSteppers)
+#elif ANY(MachineCR10Orig, SKR13, SKR14, SKR14Turbo,SKRMINIE320) && DISABLED(SKR13_ReverseSteppers)
   #define INVERT_X_DIR true
   #define INVERT_Y_DIR true
   // Changed per E5+ SKR upgrade guide
@@ -2601,7 +2599,9 @@
  *
  * View the current statistics with M78.
  */
-//#define PRINTCOUNTER
+#if NONE(MachineCR10Orig, LowMemoryBoard, SKRMiniE3V2)
+  #define PRINTCOUNTER
+#endif
 
 /**
  * Password
@@ -3161,6 +3161,10 @@
 //
 #if ANY(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) && (DISABLED(GraphicLCD) || ANY(Force10SProDisplay, ForceCRXDisplay))
   #define EXTENSIBLE_UI
+#endif
+
+#if ENABLED(EXTENSIBLE_UI)
+  //#define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display
 #endif
 
 //=============================================================================
