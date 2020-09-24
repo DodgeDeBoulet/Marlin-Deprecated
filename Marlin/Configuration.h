@@ -364,7 +364,7 @@
   #endif
 #endif
 
-#if ANY(MachineCR10SV2, MachineCR10Max, MachineCR10SProV2) && ANY(ABL_EZABL, ABL_NCSW, ABL_BLTOUCH, ABL_TOUCH_MI) && NONE(SKR13, SKR14, SKR14Turbo, SKRPRO11)
+#if ANY(MachineCR10SV2, MachineCR10Max, MachineCR10SProV2) && ANY(ABL_EZABL, ABL_NCSW, ABL_BLTOUCH, ABL_TOUCH_MI) && NONE(SKR13, SKR14, SKR14Turbo, SKRPRO11,SKRMINIE320)
   #define Z_STOP_PIN 19
 #endif
 
@@ -478,7 +478,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11,SKRMINIE320)
+#if ANY(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320)
   #define SERIAL_PORT -1
 #else
   #define SERIAL_PORT 0
@@ -489,9 +489,9 @@
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
 
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11) && (NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) || (ENABLED(GraphicLCD) && NONE(Force10SProDisplay, ForceCRXDisplay)))
+#if ANY(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320) && (NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) || (ENABLED(GraphicLCD) && NONE(Force10SProDisplay, ForceCRXDisplay)))
   #define SERIAL_PORT_2 0
-#elif ANY(SKR13, SKR14, SKR14Turbo,SKRMINIE320)
+#elif ANY(SKR13, SKR14, SKR14Turbo,SKRPRO11,SKRMINIE320)
   #define DGUS_SERIAL_PORT 0
 #endif
 
@@ -504,7 +504,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#if ANY(SKR13,SKR14,SKR14Turbo) && ENABLED(GraphicLCD)
+#if ANY(SKR13,SKR14,SKR14Turbo,SKRPR011,SKRMINIE320) && ENABLED(GraphicLCD)
   #define BAUDRATE 115200
 #else
   #define BAUDRATE 250000
@@ -1499,7 +1499,9 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+#if DISABLED(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320)
+  #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+#endif
 
 // Force the use of the probe for Z-axis homing
 #define USE_PROBE_FOR_Z_HOMING
