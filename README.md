@@ -3,7 +3,7 @@
 
 ## UPDATE 2020/09/10: Precompiled firmwares
 
-Bin/hex files for all variants listed below are now available in the  **HEX Files** folder
+Bin/hex files for all variants listed below and it is now available in the  **HEX Files** folder
 
  A selection of custom builds for the Ender 5 Plus:
  
