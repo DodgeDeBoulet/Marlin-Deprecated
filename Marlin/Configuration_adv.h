@@ -370,7 +370,7 @@
  * Hotend Idle Timeout
  * Prevent filament in the nozzle from charring and causing a critical jam.
  */
-#define HOTEND_IDLE_TIMEOUT
+// #define HOTEND_IDLE_TIMEOUT
 #if ENABLED(HOTEND_IDLE_TIMEOUT)
   #define HOTEND_IDLE_TIMEOUT_SEC (15*60)    // (seconds) Time without extruder movement to trigger protection
   #define HOTEND_IDLE_MIN_TRIGGER   170     // (°C) Minimum temperature to enable hotend protection
@@ -762,7 +762,7 @@
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
   #if ENABLED(MicroswissDirectDrive)
-    #define Z_STEPPER_ALIGN_XY { { 54, 180 }, { 315, 180 } }
+    #define Z_STEPPER_ALIGN_XY { { 36, 180 }, { 315, 180 } }
   #else
     #define Z_STEPPER_ALIGN_XY { { 50, 180 }, { 319, 180 } }
   #endif

@@ -1836,10 +1836,13 @@
   #if(ENABLED(E3DTitan))
     #define INVERT_E0_DIR false
     #define INVERT_E1_DIR true
+  #elif(ENABLED(MicroswissDirectDrive))
+    #define INVERT_E0_DIR false
+    #define INVERT_E1_DIR false
   #else
     #define INVERT_E0_DIR true
     #define INVERT_E1_DIR false
-  #endif
+   #endif
 #else
   #define INVERT_X_DIR false
   #if ANY(MachineCRX,MachineCR10SPro, MachineCR10Max, MachineCR2020)
