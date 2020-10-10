@@ -491,7 +491,7 @@
 #if ANY(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320) && (NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) || (ENABLED(GraphicLCD) && NONE(Force10SProDisplay, ForceCRXDisplay)))
   #define SERIAL_PORT_2 0
 #elif ANY(SKR13, SKR14, SKR14Turbo,SKRPRO11,SKRMINIE320)
-  #define DGUS_SERIAL_PORT 0
+  #define LCD_SERIAL_PORT 0
 #endif
 
 /**
@@ -976,6 +976,7 @@
     #define  DEFAULT_Ki 1.99
     #define  DEFAULT_Kd 87.46
   #endif
+#endif
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -992,7 +993,7 @@
   //#define DEFAULT_Ki 2.25
   //#define DEFAULT_Kd 440
 
-  #if ENABLED(PID_PARAMS_PER_HOTEND)
+ /** #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
     #define DEFAULT_Kp_LIST {  22.20,  22.20 }
@@ -1004,6 +1005,7 @@
     #define DEFAULT_Kd 114.00
   #endif
 #endif // PIDTEMP
+*/
 
 //===========================================================================
 //====================== PID > Bed Temperature Control ======================
