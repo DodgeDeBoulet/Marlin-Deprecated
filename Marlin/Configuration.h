@@ -1338,7 +1338,7 @@
 #if ENABLED(CrealityTitan)
   #define EStepsmm 382.14
 #elif ENABLED(MicroswissDirectDrive)
-  #define EStepsmm 130
+  #define EStepsmm 136.84
 #elif(ENABLED(Bondtech) || ENABLED(E3DTitan))
   #define EStepsmm 415
 #elif ENABLED(E3DHemera)
