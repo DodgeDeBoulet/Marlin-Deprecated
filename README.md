@@ -1,6 +1,7 @@
 ## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2/Stock/Silent Board
  With Configurations and Source Borrowed from [TinyMachines/InsanityAutomation](https://github.com/InsanityAutomation).
 
+## UPDATE 2020/10/10: Marlin v2.0.7.1 merged into branch 2.0.7
 ## UPDATE 2020/09/10: Precompiled firmwares
 
 Bin/hex files for all variants listed below are now available in the  **HEX Files** folder
