@@ -490,8 +490,10 @@
 
 #if ANY(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320) && (NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) || (ENABLED(GraphicLCD) && NONE(Force10SProDisplay, ForceCRXDisplay)))
   #define SERIAL_PORT_2 0
-#elif ANY(SKR13, SKR14, SKR14Turbo,SKRPRO11,SKRMINIE320)
+#elif ANY(SKR13, SKR14, SKR14Turbo,SKRPRO11)
   #define LCD_SERIAL_PORT 0
+#elif ENABLED(SKRMINIE320)
+  #define LCD_SERIAL_PORT 2
 #endif
 
 /**
@@ -1528,8 +1530,10 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-#if ANY(SKR14,SKR14Turbo,SKR13,SKRPRO11,SKRMINIE320)
+#if ANY(SKR14,SKR14Turbo,SKR13,SKRPRO11)
   #define Z_MIN_PROBE_PIN P0_10
+#elif ENABLED(SKRMINIE320)
+  // #define Z_MIN_PROBE_PIN 32
 #endif
 
 /**
