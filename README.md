@@ -1,7 +1,8 @@
 ## Creality Ender 5 Plus w/Stock Touchscreen firmware: BTT SKR 1.4/Mini E3 v2/Stock/Silent Board
  With Configurations and Source Borrowed from [TinyMachines/InsanityAutomation](https://github.com/InsanityAutomation).
 
-## UPDATE 2020/10/10: Marlin v2.0.7.1 merged into branch 2.0.7
+## UPDATE 2020/10/15: Marlin v2.0.7.2 merged
+## UPDATE 2020/10/10: Marlin v2.0.7.1 merged
 ## UPDATE 2020/09/10: Precompiled firmwares
 
 Bin/hex files for all variants listed below are now available in the  **Precompiled** folder
@@ -9,13 +10,17 @@ Bin/hex files for all variants listed below are now available in the  **Precompi
  A selection of custom builds for the Ender 5 Plus:
  
 ```
-; BTT SKR1.4 configurations below assume TMC2209 stepper drivers
-; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), Emergency Parser, All Metal Hotend and BTT SKR1.4 board
-  E5P_UBL_DD_DZ_AM_SKR14
-; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
-  E5P_UBL_DD_DZ_SKR14
+; BTT SKR1.4 configurations below assume TMC2209 v1.2 stepper drivers
 ; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
   E5P_BIL_DD_DZ_SKR14
+; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), and BTT SKR1.4 board
+  E5P_UBL_DD_DZ_SKR14
+; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All-Metal Hotend and BTT SKR1.4 board
+  E5P_UBL_DD_DZ_AM_SKR14
+; Unified bed leveling with Micro Swiss Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All-Metal Hotend and BTT SKR1.4 board
+  E5P_UBL_MS_DZ_SKR14
+; Unified bed leveling with Micro Swiss Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All-Metal Hotend, BTT TFT35 v3.0  and BTT SKR1.4 board
+  E5P_UBL_MS_DZ_GR_SKR14
 ; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board
   E5P_BIL_DD_SKR14
 ; Unified bed leveling with Direct Drive and BTT SKR1.4 board
@@ -51,13 +56,21 @@ Bin/hex files for all variants listed below are now available in the  **Precompi
 ; Bilinear bed leveling, direct drive, Creality Silent Board
   E5PBILDDSlnt
 ; Unified bed leveling, Creality Silent Board
+  E5PUBLDZSlnt
+; Unified bed leveling, Dual Z, Creality Silent Board
   E5PUBLSlnt
 ; Bilinear bed leveling, Creality Silent Board
   E5PBILSlnt
+; Unified bed leveling, Direct Drive, Creality Stock Board
+  E5PUBLDDStck
+; Bilinear bed leveling, Direct Drive, Creality Stock Board
+  E5PBILDDStck
 ; Unified bed leveling, Creality Stock Board
   E5PUBLStck
 ; Bilinear bed leveling, Creality Stock Board
   E5PBILStck
+; Unified bed leveling, Dual Z, Direct Drive, All Metal Hotend, Creality Silent Board
+  E5PUBLDDDZAMSlnt
 ```
 Name abbreviations were required for the Creality boards due to limitations in their toolsets handling of long filenames in Windows. That's why they look different from the SKR entries.
 
