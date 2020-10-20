@@ -446,6 +446,8 @@
   #if DISABLED(I2C_EEPROM)
     #define FLASH_EEPROM_EMULATION
   #endif
+#elif ANY(SKR14,SKR14Turbo)
+    #define FIL_RUNOUT_PIN P1_26
 #endif
 
 #if ENABLED(E3DHemera)
@@ -2093,7 +2095,7 @@
  * By default the firmware assumes HIGH=FILAMENT PRESENT.
  */
 #if (NONE(MachineCR10Orig, MachineCR20, MachineEnder4, MachineEnder5, MachineCRX, Melzi_To_SBoardUpgrade) || ANY(AddonFilSensor, lerdgeFilSensor, DualFilSensors  ))
-  //#define FILAMENT_RUNOUT_SENSOR
+  #define FILAMENT_RUNOUT_SENSOR
 #endif
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
