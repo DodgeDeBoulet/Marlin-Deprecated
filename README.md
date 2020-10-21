@@ -19,8 +19,6 @@ Bin/hex files for all variants listed below are now available in the  **Precompi
   E5P_UBL_DD_DZ_AM_SKR14
 ; Unified bed leveling with Micro Swiss Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All-Metal Hotend and BTT SKR1.4 board
   E5P_UBL_MS_DZ_SKR14
-; Unified bed leveling with Micro Swiss Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All-Metal Hotend, BTT TFT35 v3.0  and BTT SKR1.4 board
-  E5P_UBL_MS_DZ_GR_SKR14
 ; Bilinear bed leveling with Direct Drive and BTT SKR1.4 board
   E5P_BIL_DD_SKR14
 ; Unified bed leveling with Direct Drive and BTT SKR1.4 board
@@ -30,17 +28,21 @@ Bin/hex files for all variants listed below are now available in the  **Precompi
 ; Unified bed leveling w/bowden configuration and BTT SKR1.4 board
   E5P_UBL_SKR14
 ; EXPERIMENTAL - TFT35 Display Options
+; Unified bed leveling with Micro Swiss Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), All-Metal Hotend, BTT TFT35 v3.0  and BTT SKR1.4 board
+  E5P_UBL_MS_DZ_GR_SKR14
+; Unified bed leveling with Micro Swiss Direct Drive, All-Metal Hotend, BTT TFT35 v3.0 and BTT SKR1.4 board
+  E5P_UBL_MS_GR_SKR14
 ; Bilinear bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
   E5P_BIL_DD_DZ_GR_SKR14
 ; Unified bed leveling with Direct Drive, Dual Z steppers (Z0=Z, Z1=E1), TFT35 and BTT SKR1.4 board
   E5P_UBL_DD_DZ_GR_SKR14
-; Bilinear bed leveling with TFT35 and BTT SKR1.4 board
+; Bilinear bed leveling with Direct Drive, TFT35 and BTT SKR1.4 board
   E5P_BIL_DD_GR_SKR14
 ; Unified bed leveling with Direct Drive, TFT35 and BTT SKR1.4 board
   E5P_UBL_DD_GR_SKR14
-; Bilinear bed leveling with Direct Drive, TFT35 and BTT SKR1.4 board
+; Bilinear bed leveling w/Bowden config, TFT35 and BTT SKR1.4 board
   E5P_BIL_GR_SKR14
-; Unified bed leveling with TFT35 and BTT SKR1.4 board
+; Unified bed leveling w/Bowden config, TFT35 and BTT SKR1.4 board
   E5P_UBL_GR_SKR14
 ; BTT SKR Mini E3 v2 configurations
 ; Bilinear bed leveling, BTT SKR Mini E3 2.0 board (SAFEST TO USE - Not all Mini E3 2.0 boards have 512K)
