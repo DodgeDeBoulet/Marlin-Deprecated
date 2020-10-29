@@ -1682,10 +1682,10 @@
   //#define BABYSTEP_XY                     // Also enable X/Y Babystepping. Not supported on DELTA!
   #define BABYSTEP_INVERT_Z false           // Change if Z babysteps should go the other way
   //#define BABYSTEP_MILLIMETER_UNITS       // Specify BABYSTEP_MULTIPLICATOR_(XY|Z) in mm instead of micro-steps
-  #define BABYSTEP_MULTIPLICATOR_Z  10       // (steps or mm) Steps or millimeter distance for each Z babystep
+  #define BABYSTEP_MULTIPLICATOR_Z  5       // (steps or mm) Steps or millimeter distance for each Z babystep
   #define BABYSTEP_MULTIPLICATOR_XY 1       // (steps or mm) Steps or millimeter distance for each XY babystep
 
-  #define DOUBLECLICK_FOR_Z_BABYSTEPPING  // Double-click on the Status Screen for Z Babystepping.
+  #define DOUBLECLICK_FOR_Z_BABYSTEPPING    // Double-click on the Status Screen for Z Babystepping.
   #if ENABLED(DOUBLECLICK_FOR_Z_BABYSTEPPING)
     #define DOUBLECLICK_MAX_INTERVAL 1250   // Maximum interval between clicks, in milliseconds.
                                             // Note: Extra time may be added to mitigate controller latency.
@@ -1972,7 +1972,7 @@
 // The number of linear moves that can be in the planner at once.
 // The value of BLOCK_BUFFER_SIZE must be a power of 2 (e.g. 8, 16, 32)
 #if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320) || DISABLED(EXTENSIBLE_UI)
-  #if ENABLED(SKRMINIE320)
+  #if ENABLED(SKRMINIE320) && DISABLED(ABL_UBL)
     #define BLOCK_BUFFER_SIZE 16
   #else
     #define BLOCK_BUFFER_SIZE 64
@@ -2561,22 +2561,41 @@
    * Set *_SERIAL_TX_PIN and *_SERIAL_RX_PIN to match for all drivers
    * on the same serial port, either here or in your board's pins file.
    */
-  #define  X_SLAVE_ADDRESS 0
-  #define  Y_SLAVE_ADDRESS 0
-  #define  Z_SLAVE_ADDRESS 0
-  #define X2_SLAVE_ADDRESS 0
-  #define Y2_SLAVE_ADDRESS 0
-  #define Z2_SLAVE_ADDRESS 0
-  #define Z3_SLAVE_ADDRESS 0
-  #define Z4_SLAVE_ADDRESS 0
-  #define E0_SLAVE_ADDRESS 0
-  #define E1_SLAVE_ADDRESS 0
-  #define E2_SLAVE_ADDRESS 0
-  #define E3_SLAVE_ADDRESS 0
-  #define E4_SLAVE_ADDRESS 0
-  #define E5_SLAVE_ADDRESS 0
-  #define E6_SLAVE_ADDRESS 0
-  #define E7_SLAVE_ADDRESS 0
+  #if ENABLED(SKRMINIE320)
+    #define  X_SLAVE_ADDRESS 0
+    #define  Y_SLAVE_ADDRESS 2
+    #define  Z_SLAVE_ADDRESS 1
+    #define X2_SLAVE_ADDRESS 0
+    #define Y2_SLAVE_ADDRESS 0
+    #define Z2_SLAVE_ADDRESS 0
+    #define Z3_SLAVE_ADDRESS 0
+    #define Z4_SLAVE_ADDRESS 0
+    #define E0_SLAVE_ADDRESS 3
+    #define E1_SLAVE_ADDRESS 0
+    #define E2_SLAVE_ADDRESS 0
+    #define E3_SLAVE_ADDRESS 0
+    #define E4_SLAVE_ADDRESS 0
+    #define E5_SLAVE_ADDRESS 0
+    #define E6_SLAVE_ADDRESS 0
+    #define E7_SLAVE_ADDRESS 0
+  #else
+    #define  X_SLAVE_ADDRESS 0
+    #define  Y_SLAVE_ADDRESS 0
+    #define  Z_SLAVE_ADDRESS 0
+    #define X2_SLAVE_ADDRESS 0
+    #define Y2_SLAVE_ADDRESS 0
+    #define Z2_SLAVE_ADDRESS 0
+    #define Z3_SLAVE_ADDRESS 0
+    #define Z4_SLAVE_ADDRESS 0
+    #define E0_SLAVE_ADDRESS 0
+    #define E1_SLAVE_ADDRESS 0
+    #define E2_SLAVE_ADDRESS 0
+    #define E3_SLAVE_ADDRESS 0
+    #define E4_SLAVE_ADDRESS 0
+    #define E5_SLAVE_ADDRESS 0
+    #define E6_SLAVE_ADDRESS 0
+    #define E7_SLAVE_ADDRESS 0
+  #endif
 
   /**
    * Software enable
@@ -3356,7 +3375,7 @@
  * Add G-codes M810-M819 to define and run G-code macros.
  * Macros are not saved to EEPROM.
  */
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11)
   #define GCODE_MACROS
 #endif
 #if ENABLED(GCODE_MACROS)
