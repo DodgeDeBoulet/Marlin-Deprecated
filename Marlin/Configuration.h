@@ -494,6 +494,7 @@
   #define SERIAL_PORT_2 0
 #elif ANY(SKR13, SKR14, SKR14Turbo,SKRPRO11)
   #define LCD_SERIAL_PORT 0
+  #define SERIAL_PORT_2 1
 #elif ENABLED(SKRMINIE320)
   #define LCD_SERIAL_PORT 2
 #endif
