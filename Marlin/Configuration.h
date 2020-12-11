@@ -1698,7 +1698,11 @@
     #define NOZZLE_TO_PROBE_OFFSET { 45, 7, 0 }
   #endif
 #elif ENABLED(MicroswissDirectDrive) && ENABLED(ABL_BLTOUCH)
-  #define NOZZLE_TO_PROBE_OFFSET { -45, -5, 0 }
+  #if ENABLED(DDBCustom)
+    #define NOZZLE_TO_PROBE_OFFSET { -45, -6.38, -4.65 }
+  #else
+    #define NOZZLE_TO_PROBE_OFFSET { -45, -5, 0 }
+  #endif
 #elif (ENABLED(ABL_BLTOUCH) && ENABLED(HotendStock))
   #define NOZZLE_TO_PROBE_OFFSET { -41, -8, 0 }
 #elif ((ANY(ABL_EZABL, ABL_NCSW)) && ENABLED(HotendStock))
