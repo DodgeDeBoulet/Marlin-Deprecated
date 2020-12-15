@@ -786,7 +786,7 @@
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
   #if ENABLED(MicroswissDirectDrive)
-    #define Z_STEPPER_ALIGN_XY { { 36, 180 }, { 315, 180 } }
+    #define Z_STEPPER_ALIGN_XY { { 36, 180 }, { 314, 180 } }
   #else
     #define Z_STEPPER_ALIGN_XY { { 50, 180 }, { 319, 180 } }
   #endif
@@ -1772,8 +1772,8 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  //#define PROBING_MARGIN_LEFT PROBING_MARGIN
-  //#define PROBING_MARGIN_RIGHT PROBING_MARGIN
+  #define PROBING_MARGIN_LEFT (PROBING_MARGIN + ClipClearance)
+  #define PROBING_MARGIN_RIGHT (PROBING_MARGIN + ClipClearance)
   #define PROBING_MARGIN_FRONT (PROBING_MARGIN + ClipClearance)
   #define PROBING_MARGIN_BACK (PROBING_MARGIN + ClipClearance)
 #endif

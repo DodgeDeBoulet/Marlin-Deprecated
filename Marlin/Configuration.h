@@ -1726,7 +1726,9 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#if ENABLED(ABL_BLTOUCH)
+#if ENABLED(DDB_Custom)
+  #define PROBING_MARGIN 0
+#elif ENABLED(ABL_BLTOUCH)
   #define PROBING_MARGIN 15
 #else
   #define PROBING_MARGIN 10
@@ -1957,17 +1959,19 @@
     #define Y_MAX_POS 225
     #define ClipClearance 15
   #elif ENABLED(MachineEnder5Plus)
-    #define Y_BED_SIZE 360
+    #define Y_BED_SIZE 350
     #define Z_MAX_POS 400
     #if ENABLED(E3DHemera)
       #define X_BED_SIZE 352
       #define X_MAX_POS 352
     #else
-      #define X_BED_SIZE 360
-      #define X_MAX_POS 360
+      #define X_BED_SIZE 350
+      #define X_MAX_POS 359
     #endif
     #define Y_MAX_POS 360
-    #if ENABLED(SwissClips)
+    #if ENABLED(DDB_Custom)
+      #define ClipClearance 0
+    #elif ENABLED(SwissClips)
       #define ClipClearance 5
     #else
       #define ClipClearance 25
@@ -2280,7 +2284,7 @@
   //===========================================================================
   //========================= Unified Bed Leveling ============================
   //===========================================================================
-  #define MESH_INSET 1
+  #define MESH_INSET 5
   #if NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max, MachineEnder4, OrigLCD) || ENABLED(GraphicLCD)
     #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
   #endif
