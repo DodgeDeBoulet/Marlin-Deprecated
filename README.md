@@ -39,6 +39,8 @@ Bin/hex files for all variants listed below are now available in the  **Precompi
   E5P_UBL_DD_DZ_GR_SKR14
 ; Bilinear bed leveling with Direct Drive, TFT35 and BTT SKR1.4 board
   E5P_BIL_DD_GR_SKR14
+; Bilinear bed leveling with Direct Drive, All Metal Hotend, TFT35 and BTT SKR1.4 board
+  E5P_BIL_DD_AM_GR_SKR14
 ; Unified bed leveling with Direct Drive, TFT35 and BTT SKR1.4 board
   E5P_UBL_DD_GR_SKR14
 ; Bilinear bed leveling w/Bowden config, TFT35 and BTT SKR1.4 board
