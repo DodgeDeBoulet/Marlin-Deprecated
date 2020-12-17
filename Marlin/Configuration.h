@@ -1959,7 +1959,7 @@
     #define Y_MAX_POS 225
     #define ClipClearance 15
   #elif ENABLED(MachineEnder5Plus)
-    #if ENABLED(DDB_E5P_CUSTOM)
+    #if ENABLED(DDB_Custom)
       #define Y_BED_SIZE 350
     #else
       #define Y_BED_SIZE 360
@@ -1969,7 +1969,7 @@
       #define X_BED_SIZE 352
       #define X_MAX_POS 352
     #else
-      #if ENABLED(DDB_E5P_CUSTOM)
+      #if ENABLED(DDB_Custom)
         #define X_BED_SIZE 350
         #define X_MAX_POS 359
       #else
