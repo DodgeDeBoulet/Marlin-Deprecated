@@ -786,7 +786,7 @@
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
   #if ENABLED(MicroswissDirectDrive)
-    #define Z_STEPPER_ALIGN_XY { { 36, 180 }, { 314, 180 } }
+    #define Z_STEPPER_ALIGN_XY { { 41, 180 }, { 309, 180 } }
   #else
     #define Z_STEPPER_ALIGN_XY { { 50, 180 }, { 319, 180 } }
   #endif
