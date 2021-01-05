@@ -496,8 +496,10 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#if ANY(SKR13,SKR14,SKR14Turbo)
+#if ANY(SKR13, SKR14, SKR14Turbo)
   #define E0_AUTO_FAN_PIN P2_04
+#elif ENABLED(SKRE3Turbo)
+  #define E0_AUTO_FAN_PIN P2_02
 #else
   #define E0_AUTO_FAN_PIN -1
 #endif
@@ -746,7 +748,7 @@
    * differs, a mode set eeprom write will be completed at initialization.
    * Use the option below to force an eeprom write to a V3.1 probe regardless.
    */
-  #if NONE(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+  #if NONE(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320)
     #define BLTOUCH_SET_5V_MODE
   #endif
   /**
@@ -933,7 +935,7 @@
 // Backlash Compensation
 // Adds extra movement to axes on direction-changes to account for backlash.
 //
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320)
   #define BACKLASH_COMPENSATION
 #endif
 #if ENABLED(BACKLASH_COMPENSATION)
@@ -1023,7 +1025,7 @@
  * vibration and surface artifacts. The algorithm adapts to provide the best possible step smoothing at the
  * lowest stepping frequencies.
  */
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320)
   #define ADAPTIVE_STEP_SMOOTHING
 #endif
 
@@ -1260,7 +1262,7 @@
     //#define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     //#define POWER_LOSS_RECOVER_ZHOME  // Z homing is needed for proper recovery. 99.9% of the time this should be disabled!
     //#define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on power loss with UPS)
-    #if ANY(SKR14Turbo, SKR14) && DISABLED(SKR14_PowerLossKit)
+    #if ANY(SKR14Turbo, SKR14, SKRE3Turbo) && DISABLED(SKR14_PowerLossKit)
       #define POWER_LOSS_PIN -1
     #endif
     //#define POWER_LOSS_PIN         44 // Pin to detect power loss
@@ -1403,7 +1405,7 @@
    *
    * :[ 'LCD', 'ONBOARD', 'CUSTOM_CABLE' ]
    */
-  #if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+  #if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320)
     #define SDCARD_CONNECTION ONBOARD
   #endif
 
@@ -1440,7 +1442,7 @@
 
   // A bigger font is available for edit items. Costs 3120 bytes of PROGMEM.
   // Western only. Not available for Cyrillic, Kana, Turkish, Greek, or Chinese.
-  #if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11)
+  #if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11)
     #define USE_BIG_EDIT_FONT
   #endif
 
@@ -1495,7 +1497,7 @@
   //#define STATUS_FAN_FRAMES 3       // :[0,1,2,3,4] Number of fan animation frames
   //#define STATUS_HEAT_PERCENT       // Show heating in a progress bar
   //#define BOOT_MARLIN_LOGO_SMALL    // Show a smaller Marlin logo on the Boot Screen (saving 399 bytes of flash)
-  #if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11)
+  #if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11)
     #define BOOT_MARLIN_LOGO_ANIMATED // Animated Marlin logo. Costs ~‭3260 (or ~940) bytes of PROGMEM.
   #else
     #define BOOT_MARLIN_LOGO_SMALL    // Show a smaller Marlin logo on the Boot Screen (saving 399 bytes of flash)
@@ -1727,7 +1729,7 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-#if NONE(MachineCR10Orig, LowMemoryBoard, MachineCR10SPro, MachineCR10Max, SKR13, SKR14, SKR14Turbo, MachineCR10SV2, CrealitySilentBoard) || ENABLED(OrigLA) || (ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11) && ENABLED(SKR_UART))
+#if NONE(MachineCR10Orig, LowMemoryBoard, MachineCR10SPro, MachineCR10Max, SKR13, SKR14, SKR14Turbo, SKRE3Turbo, MachineCR10SV2, CrealitySilentBoard) || ENABLED(OrigLA) || (ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11) && ENABLED(SKR_UART))
   #define LIN_ADVANCE
 #endif
 #if ENABLED(LIN_ADVANCE)
@@ -1971,7 +1973,7 @@
 
 // The number of linear moves that can be in the planner at once.
 // The value of BLOCK_BUFFER_SIZE must be a power of 2 (e.g. 8, 16, 32)
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320) || DISABLED(EXTENSIBLE_UI)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320) || DISABLED(EXTENSIBLE_UI)
   #if ENABLED(SKRMINIE320) && DISABLED(ABL_UBL)
     #define BLOCK_BUFFER_SIZE 16
   #else
@@ -1988,7 +1990,7 @@
 #define MAX_CMD_SIZE 128
 #if ENABLED(MachineCR10Orig) //melzi has more ram than a 2560
   #define BUFSIZE 16
-#elif ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+#elif ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320)
   #if ENABLED(SKRMINIE320)
     #define BUFSIZE 8
   #else
@@ -2004,7 +2006,7 @@
 // For debug-echo: 128 bytes for the optimal speed.
 // Other output doesn't need to be that speedy.
 // :[0, 2, 4, 8, 16, 32, 64, 128, 256]
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11)
   #define TX_BUFFER_SIZE 32
 #else
   #define TX_BUFFER_SIZE 0
@@ -2091,7 +2093,7 @@
  *
  * Note that M207 / M208 / M209 settings are saved to EEPROM.
  */
- #if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, SKRMINIE320)
+ #if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320)
   #define FWRETRACT
 #endif
 #if ENABLED(FWRETRACT)
@@ -3375,7 +3377,7 @@
  * Add G-codes M810-M819 to define and run G-code macros.
  * Macros are not saved to EEPROM.
  */
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11)
   #define GCODE_MACROS
 #endif
 #if ENABLED(GCODE_MACROS)

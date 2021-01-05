@@ -151,6 +151,7 @@
 //#define SKR13 // 32 bit board - assumes 2208 drivers
 //#define SKR14
 //#define SKR14Turbo
+//#define SKRE3Turbo
 //#define SKRPRO11
 //#define SKRMINIE320
 
@@ -343,7 +344,7 @@
   #if NONE(ABL_NCSW, ABL_EZABL, ABL_BLTOUCH)
     #define ABL_BLTOUCH
   #endif
-  #if NONE(SKR13, SKR14, SKR14Turbo, SKRPRO11,SKRMINIE320)
+  #if NONE(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11,SKRMINIE320)
     #define Y_STOP_PIN 14
     #define X_STOP_PIN 3
   #endif
@@ -363,7 +364,7 @@
   #endif
 #endif
 
-#if ANY(MachineCR10SV2, MachineCR10Max, MachineCR10SProV2) && ANY(ABL_EZABL, ABL_NCSW, ABL_BLTOUCH, ABL_TOUCH_MI) && NONE(SKR13, SKR14, SKR14Turbo, SKRPRO11,SKRMINIE320)
+#if ANY(MachineCR10SV2, MachineCR10Max, MachineCR10SProV2) && ANY(ABL_EZABL, ABL_NCSW, ABL_BLTOUCH, ABL_TOUCH_MI) && NONE(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11,SKRMINIE320)
   #define Z_STOP_PIN 19
 #endif
 
@@ -446,7 +447,7 @@
   #if DISABLED(I2C_EEPROM)
     #define FLASH_EEPROM_EMULATION
   #endif
-#elif ANY(SKR14,SKR14Turbo)
+#elif ANY(SKR14,SKR14Turbo, SKRE3Turbo)
     #define FIL_RUNOUT_PIN P1_26
 #endif
 
@@ -479,7 +480,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#if ANY(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320)
   #define SERIAL_PORT -1
 #else
   #define SERIAL_PORT 0
@@ -490,12 +491,12 @@
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
 
-#if ANY(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320) && (NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) || (ENABLED(GraphicLCD) && NONE(Force10SProDisplay, ForceCRXDisplay)))
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, SKRMINIE320) && (NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) || (ENABLED(GraphicLCD) && NONE(Force10SProDisplay, ForceCRXDisplay)))
   #define SERIAL_PORT_2 0
-#elif ANY(SKR13, SKR14, SKR14Turbo,SKRPRO11)
+#elif ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11)
   #define LCD_SERIAL_PORT 0
   #define SERIAL_PORT_2 1
-#elif ENABLED(SKRMINIE320)
+#elif ANY(SKRMINIE320,SKRE3Turbo)
   #define LCD_SERIAL_PORT 2
 #endif
 
@@ -525,6 +526,8 @@
     #define MOTHERBOARD BOARD_BTT_SKR_V1_4
   #elif ENABLED(SKR13)
     #define MOTHERBOARD BOARD_BTT_SKR_V1_3
+  #elif ENABLED(SKRE3Turbo)
+    #define MOTHERBOARD BOARD_BTT_SKR_E3_TURBO
   #elif ENABLED(SKRPRO11)
     #define MOTHERBOARD BOARD_BTT_SKR_PRO_V1_1
   #elif ENABLED(SKRMINIE320)
@@ -1220,7 +1223,7 @@
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'L6474', 'POWERSTEP01', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
 
-#if ANY(SKR13, SKR14, SKR14Turbo, SKRPRO11, MachineCR10SV2, SKRMINIE320, CrealitySilentBoard, MachineCR10SPro, MachineCR10SProV2, MachineCR10Max) && DISABLED(SKR_UART)
+#if ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11, MachineCR10SV2, SKRMINIE320, CrealitySilentBoard, MachineCR10SPro, MachineCR10SProV2, MachineCR10Max) && DISABLED(SKR_UART)
   #if ENABLED(SKR_2209)
     #define X_DRIVER_TYPE  TMC2209_STANDALONE
     #define Y_DRIVER_TYPE  TMC2209_STANDALONE
@@ -1252,7 +1255,7 @@
       #define E1_DRIVER_TYPE TMC2208_STANDALONE
     #endif
   #endif
-#elif ANY(SKR13, SKR14, SKR14Turbo, SKRMINIE320, SKRPRO11) && ENABLED(SKR_UART)
+#elif ANY(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRMINIE320, SKRPRO11) && ENABLED(SKR_UART)
   #if ENABLED(SKR_2209)
     #define X_DRIVER_TYPE  TMC2209
     #define Y_DRIVER_TYPE  TMC2209
@@ -1517,7 +1520,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#if DISABLED(SKR13,SKR14,SKR14Turbo,SKRPRO11,SKRMINIE320)
+#if DISABLED(SKR13,SKR14,SKR14Turbo, SKRE3Turbo, SKRPRO11,SKRMINIE320)
   #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 #endif
 
@@ -1539,8 +1542,10 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-#if ANY(SKR14,SKR14Turbo,SKR13,SKRPRO11)
+#if ANY(SKR14, SKR14Turbo, SKR13, SKRPRO11)
   #define Z_MIN_PROBE_PIN P0_10
+#elif ENABLED(SKRE3Turbo)
+  #define Z_MIN_PROBE_PIN P1_22
 #elif ENABLED(SKRMINIE320)
   // #define Z_MIN_PROBE_PIN 32
 #endif
@@ -1614,7 +1619,7 @@
     #define PROBING_FANS_OFF          // Turn fans off when probing
   #endif
 
-  #if ENABLED(MachineEnder4) && NONE(SKR13, SKR14, SKR14Turbo, SKRPRO11)
+  #if ENABLED(MachineEnder4) && NONE(SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRPRO11)
     #define SOLENOID_PROBE PIN_15
   #endif
 #endif
@@ -1853,7 +1858,7 @@
     #define INVERT_E0_DIR true
     #define INVERT_E1_DIR false
   #endif
-#elif ANY(MachineCR10Orig, SKR13, SKR14, SKR14Turbo,SKRMINIE320) && DISABLED(SKR13_ReverseSteppers)
+#elif ANY(MachineCR10Orig, SKR13, SKR14, SKR14Turbo, SKRE3Turbo, SKRMINIE320) && DISABLED(SKR13_ReverseSteppers)
   #define INVERT_X_DIR true
   #define INVERT_Y_DIR true
   // Changed per E5+ SKR upgrade guide
@@ -2915,7 +2920,7 @@
   #define MKS_MINI_12864
 #elif ANY(OrigLCD, MachineCR10Orig) && DISABLED(GraphicLCD)
   #define CR10_STOCKDISPLAY
-#elif NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max, OrigLCD, MachineCR10Orig) || ENABLED(GraphicLCD)
+#elif NONE(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max, OrigLCD, CR10_STOCKDISPLAY, MachineCR10Orig) || ENABLED(GraphicLCD)
   #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 #endif
 //
@@ -3091,6 +3096,10 @@
 //
 //#define ENDER2_STOCKDISPLAY
 
+#if ENABLED(CR10_STOCKDISPLAY)
+  #define IT
+#endif
+
 //
 // ANET and Tronxy Graphical Controller
 //
@@ -3207,7 +3216,7 @@
 // Third-party or vendor-customized controller interfaces.
 // Sources should be installed in 'src/lcd/extensible_ui'.
 //
-#if ANY(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) && (DISABLED(GraphicLCD) || ANY(Force10SProDisplay, ForceCRXDisplay))
+#if ANY(MachineCR10SPro, MachineCRX, MachineEnder5Plus, MachineCR10Max) && (NONE(GraphicLCD,CR10_STOCKDISPLAY) || ANY(Force10SProDisplay, ForceCRXDisplay))
   #define EXTENSIBLE_UI
 #endif
 
